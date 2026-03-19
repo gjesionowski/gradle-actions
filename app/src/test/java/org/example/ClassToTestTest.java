@@ -5,28 +5,37 @@ package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class ClassToTestTest {
+    private static final Logger logger = LoggerFactory.getLogger(ClassToTestTest.class);
+
     @Test
     void addReturnsCorrectResult() {
+        logger.info("addReturnsCorrectResult started");
+        logger.debug("Debugging information");
         ClassToTest classUnderTest = new ClassToTest();
         assertEquals(5, classUnderTest.add(2, 3), "add should return the correct result");
     }
 
     @Test
     void subtractReturnsCorrectResult() {
+        logger.info("subtractReturnsCorrectResult started");
         ClassToTest classUnderTest = new ClassToTest();
         assertEquals(5, classUnderTest.subtract(10, 5), "subtract should return the correct result");
     }
 
     @Test
     void multiplyReturnsCorrectResult() {
+        logger.info("multiplyReturnsCorrectResult started");
         ClassToTest classUnderTest = new ClassToTest();
         assertEquals(6, classUnderTest.multiply(2, 3), "multiply should return the correct result");
     }
 
     @Test
     void divideReturnsCorrectResult() {
+        logger.info("divideReturnsCorrectResult started");
         ClassToTest classUnderTest = new ClassToTest();
         assertEquals(2, classUnderTest.divide(10, 5), "divide should return the correct result");
     }
